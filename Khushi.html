@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #fff0f3;
+            background-image: radial-gradient(#ffb6c1 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+        }
+        .cursive { font-family: 'Dancing Script', cursive; }
+        .scallop {
+            background-image: radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
+            background-size: 20px 20px;
+            height: 20px;
+            width: 100%;
+        }
+        .heart-active {
+            background-color: white !important;
+            border: 2px solid #ff85a2;
+            color: #ff4d6d !important;
+            transform: scale(1.05);
+        }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div id="card-container" class="w-full max-w-sm bg-white rounded-2xl shadow-2xl overflow-hidden relative">
+        <div class="scallop rotate-180"></div>
+
+        <div class="p-8 text-center min-h-[450px] flex flex-col justify-center">
+            
+            <div id="screen1" class="fade-in">
+                <div class="text-6xl mb-4">🐼</div>
+                <h1 class="text-3xl text-pink-500 cursive mb-2">This is for my love "Khushi Thavliya" 💖</h1>
+                <p class="text-gray-500 mb-8">Khushi, your name literally means joy, and that is exactly what you’ve brought into my soul. I love you with a depth that scares me and a devotion that will never waver. No matter where life takes us, I promise that you will always come first, above all else. You are my greatest treasure, my soulmate, and my forever. I love you more than words could ever describe. You are the heartbeat that gives my life rhythm and the light that turns my darkest days into gold. When I say you are my first priority, I don’t just mean you’re at the top of a list—I mean you are the very foundation of my world. Every decision I make, every dream I chase, and every prayer I whisper begins and ends with your happiness in mind.</p>
+                <h2 class="text-2xl text-pink-500 cursive mb-2">I love you alot my babude meri pyari si jaan my love Khusi Thavliya 🐱💖😘</h2>
+                <p class="text-gray-500 mb-8">Open it there is something else to feel so much special to me </p>
+                <button onclick="showScreen(2)" class="px-8 py-2 border-2 border-pink-400 text-pink-500 rounded-lg hover:bg-pink-50 transition font-semibold">Open it</button>
+            </div>
+
+            <div id="screen2" class="hidden fade-in">
+                <h2 class="text-2xl text-pink-500 cursive mb-1">Why you?</h2>
+                <p class="text-xs text-gray-400 mb-6">Tap each rectangle boxes to know</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div onclick="reveal(this)" class="h-24 bg-pink-100 rounded-xl flex items-center justify-center cursor-pointer text-transparent transition-all duration-300 font-bold p-2">You make me smile</div>
+                    <div onclick="reveal(this)" class="h-24 bg-orange-100 rounded-xl flex items-center justify-center cursor-pointer text-transparent transition-all duration-300 font-bold p-2">I love being with you</div>
+                    <div onclick="reveal(this)" class="h-24 bg-pink-200 rounded-xl flex items-center justify-center cursor-pointer text-transparent transition-all duration-300 font-bold p-2">You are my favorite</div>
+                    <div onclick="reveal(this)" class="h-24 bg-purple-100 rounded-xl flex items-center justify-center cursor-pointer text-transparent transition-all duration-300 font-bold p-2">You mean a lot to me</div>
+                </div>
+                <button onclick="showScreen(3)" class="mt-8 px-8 py-2 border-2 border-pink-400 text-pink-500 rounded-lg font-semibold">Continue</button>
+            </div>
+
+            <div id="screen3" class="hidden fade-in">
+                <h2 class="text-2xl text-pink-500 cursive mb-4">Memories</h2>
+                <p class="text-xs text-gray-400 mb-2">Slide Up to see more</p>
+                <div id="image1">
+                <div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden border-4 border-pink-50 shadow-inner">
+                    <img src="20260207_145153.jpg.jpeg" class="w-full h-full object-cover" >
+                </div>
+                </div>
+                <div id="image2">
+                     <div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden border-4 border-pink-50 shadow-inner">
+                    <img src="WhatsApp Image 2026-02-14 at 13.58.57.jpeg" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                 <div id="image3">
+                     <div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden border-4 border-pink-50 shadow-inner">
+                    <img src="WhatsApp Image 2026-02-14 at 13.58.41.jpeg" class="w-full h-full object-cover">
+                    </div>
+                    </div>
+                    <div id="image4">
+                     <div class="relative w-full aspect-[3/4] rounded-lg overflow-hidden border-4 border-pink-50 shadow-inner">
+                    <img src="20260207_145314.jpg.jpeg" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <button onclick="showScreen(4)" class="mt-6 px-8 py-2 border-2 border-pink-400 text-pink-500 rounded-lg font-semibold">Continue</button>
+            </div>
+
+            <div id="screen4" class="hidden fade-in">
+                <div class="text-6xl mb-4">🐱</div>
+                <h2 class="text-3xl text-pink-500 cursive mb-10">Will you be my Valentine?</h2>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 relative h-32">
+                    <button onclick="celebrate()" class="z-10 px-10 py-3 bg-pink-500 text-white rounded-full font-bold shadow-lg hover:scale-110 transition">YES!</button>
+                    <button id="noBtn" onmouseover="moveButton()" class="px-6 py-2 bg-gray-200 text-gray-500 rounded-full transition-all duration-100 cursor-default">No thanks</button>
+                </div>
+            </div>
+
+            <div id="screen5" class="hidden fade-in">
+                <div class="text-7xl mb-4 animate-bounce">💖</div>
+                <h1 class="text-4xl text-pink-500 cursive">Yayyy!</h1>
+                <p class="mt-4 text-gray-600">I know you'll say yes! </p>
+            </div>
+
+        </div>
+
+        <div class="scallop"></div>
+    </div>
+
+    <script>
+        function showScreen(num) {
+            document.querySelectorAll('#card-container > div > div').forEach(div => div.classList.add('hidden'));
+            document.getElementById('screen' + num).classList.remove('hidden');
+        }
+
+        function reveal(el) {
+            el.classList.add('heart-active');
+        }
+
+        function moveButton() {
+            const btn = document.getElementById('noBtn');
+
+            const maxX = 100; 
+            const maxY = 50; 
+            const x = Math.random() * (maxX * 2) - maxX;
+            const y = Math.random() * (maxY * 2) - maxY;
+            btn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function celebrate() {
+            showScreen(5);
+            
+        }
+    </script>
+</body>
+</html>
